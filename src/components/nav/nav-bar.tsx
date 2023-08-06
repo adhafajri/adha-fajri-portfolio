@@ -2,24 +2,25 @@
 
 import { usePathname } from 'next/navigation'
 import { NavLink, NavLinkImage } from ".";
+import { navImages, navLinks } from '@/config';
 
 const NavBar = () => {
     const pathname = usePathname()
-    console.log('[NavBar][pathname]', pathname)
 
     return (
         <nav className='flex justify-between items-center self-stretch'>
             <div className='flex items-start gap-4'>
-                <NavLink href="/" label="About Me" active={pathname == "/"} />
-                <NavLink href="/projects" label="Projects" active={pathname == "/projects"} />
+                {navLinks.map(({href, label, isNavLink}) => (
+                    <NavLink key={href} href={href} label={label} active={pathname === href} />
+                ))}
             </div>
-
             <div className='flex items-start gap-4'>
-                <NavLinkImage href="https://www.linkedin.com/in/adhafajri/" label="About Me" imgSrc={"/linkedIn.svg"} />
-                <NavLinkImage href="https://github.com/adhafajri" label="Projects" imgSrc={"/github.svg"} />
+                {navImages.map(({href, label, imgSrc}) => (
+                    <NavLinkImage key={href} href={href} label={label} imgSrc={imgSrc} />
+                ))}
             </div>
         </nav>
-    )
+    );
 }
 
 export default NavBar;
