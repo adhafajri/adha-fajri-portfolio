@@ -5,9 +5,9 @@ import Image from "next/image";
 
 export default function AboutMe() {
   return (
-    <main className='flex flex-col items-center gap-16 w-full'>
-      <div className='flex items-center justify-between pr-16 w-full'>
-        <div className="flex items-center p-8 pl-16 rounded-r-2xl bg-orange">
+    <main className='flex flex-col items-center gap-16 mt-32 w-full'>
+      <div className='flex items-center justify-between pr-8 w-full'>
+        <div className="flex items-center p-8 pl-8 rounded-r-2xl bg-orange">
           <p className="text-4xl text-white font-extralight">
             Hi, I'm Muhammad Adha <span className="font-bold">Fajri</span> Jonison <span role="img" aria-label="wave">👋</span>
             <br />
@@ -25,7 +25,7 @@ export default function AboutMe() {
         </div>
       </div>
 
-      <div className="flex justify-between items-start px-16 w-full">
+      <div className="flex justify-between items-start px-8 w-full">
         <div className="flex flex-col items-start gap-16 flex-[1_0_0%]">
           <div className="flex flex-col items-start gap-4 self-stretch">
             <HeaderCard text="Experience" />
