@@ -17,7 +17,7 @@ const ExperienceCard = ({ imageSrc, title, description, techStack }: { imageSrc:
 
                 <div className='flex items-start gap-4'>
                     {techStack.map((tech, index) =>
-                        <div className='flex p-4 flex-col justify-center items-start gap-2 rounded-2xl bg-yellow'>
+                        <div key={index} className='flex p-4 flex-col justify-center items-start gap-2 rounded-2xl bg-yellow'>
                             <p key={index} className='text-black text-xl font-normal'>{tech}</p>
                         </div>
                     )}

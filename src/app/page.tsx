@@ -8,9 +8,9 @@ export default function AboutMe() {
       <div className='flex items-center justify-between pr-8 w-full'>
         <div className="flex items-center p-8 pl-8">
           <p className="text-4xl text-white font-extralight">
-            Hi, I'm Muhammad Adha <span className="font-bold">Fajri</span> Jonison <span role="img" aria-label="wave">👋</span>
+            Hi, I&apos;m Muhammad Adha <span className="font-bold">Fajri</span> Jonison <span role="img" aria-label="wave">👋</span>
             <br />
-            I'm an aspiring <span className="font-bold">iOS Developer!</span>
+            I&apos;m an aspiring <span className="font-bold">iOS Developer!</span>
           </p>
         </div>
 

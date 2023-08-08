@@ -5,7 +5,11 @@ import { NavLinkImage } from "@/components/nav";
 import Image from "next/image";
 import { useState } from "react";
 
-export default function Page({ id }: { id: string }) {
+export interface Project {
+    id: string
+}
+
+export default function Page({ params }: { params: Project }) {
     const [activeIndex, setActiveIndex] = useState(0);
     const amount = 3; // the total number of slides
 
@@ -41,7 +45,7 @@ export default function Page({ id }: { id: string }) {
             <div className='flex flex-col items-start gap-4 flex-[1_0_0%]'>
                 <div className='flex flex-col justify-center items-start gap-2 self-stretch'>
                     <p className='self-stretch text-xl font-extralight text-black'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        {params.id} Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </p>
                 </div>
 
