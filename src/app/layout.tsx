@@ -11,7 +11,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'Adha Fajri',
+  title: 'Muhammad Adha Fajri Jonison',
   description: "Muhammad Adha Fajri Jonison's Portfolio",
 }
 
