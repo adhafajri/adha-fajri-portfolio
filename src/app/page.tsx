@@ -1,13 +1,12 @@
 import { ExperienceCard, HeaderCard, SkillCard } from "@/components/card";
 import { DateText, ListText, SubtitleText, TitleText } from "@/components/text";
-import HeaderText from "@/components/text/header-text";
 import Image from "next/image";
 
 export default function AboutMe() {
   return (
     <main className='flex flex-col items-center gap-16 mt-32 w-full'>
       <div className='flex items-center justify-between pr-8 w-full'>
-        <div className="flex items-center p-8 pl-8 rounded-r-2xl bg-orange">
+        <div className="flex items-center p-8 pl-8">
           <p className="text-4xl text-white font-extralight">
             Hi, I'm Muhammad Adha <span className="font-bold">Fajri</span> Jonison <span role="img" aria-label="wave">👋</span>
             <br />
@@ -16,7 +15,7 @@ export default function AboutMe() {
         </div>
 
         <div className="flex flex-col -space-y-8">
-          <Image src={"/picture.png"} alt={"Self Picture"} width={326} height={327} objectFit="contain" priority />
+          <Image src={"/picture.png"} alt={"Self Picture"} width={327} height={327} objectFit="contain" />
           <div className="inline-flex justify-center items-center p-4 rounded-2xl bg-white">
             <p className="text-2xl text-black font-medium">
               2+ years experience

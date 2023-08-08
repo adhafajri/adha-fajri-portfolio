@@ -3,8 +3,8 @@ import Link from "next/link";
 
 const ExperienceCard = ({ imageSrc, title, description, techStack }: { imageSrc: string, title: string, description: string, techStack: string[] }) => {
     return (
-        <Link href={'/'} className='flex p-8 items-start gap-4 self-stretch rounded-2xl bg-white'>
-            <Image src={imageSrc} alt={title} width={360} height={256} objectFit="contain" priority />
+        <Link href={'/projects/1'} className='flex p-8 items-start gap-4 self-stretch rounded-2xl bg-white'>
+            <Image src={imageSrc} alt={title} width={360} height={256} objectFit="contain" />
             <div className='flex flex-col items-start gap-4 flex-[1_0_0%]'>
                 <div className='flex flex-col justify-center items-start gap-2 self-stretch'>
                     <p className='text-2xl font-medium text-black'>

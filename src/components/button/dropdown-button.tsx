@@ -12,7 +12,7 @@ const DropdownButton = ({ text, optionList }: { text: string, optionList: string
         <div className='flex flex-col gap-2'>
             <button onClick={toggleOpen} className="flex p-4 items-center gap-8 rounded-2xl bg-orange">
                 <p className="text-white align-center text-xl font-normal">{text}</p>
-                <Image src={isOpen ? "/icons/chevron-up.svg" : "/icons/chevron-down.svg"} alt={"down icon"} width={32} height={32} objectFit="contain" priority />
+                <Image src={isOpen ? "/icons/chevron-up.svg" : "/icons/chevron-down.svg"} alt={"down icon"} width={32} height={32} objectFit="contain" />
             </button>
 
             {isOpen && (

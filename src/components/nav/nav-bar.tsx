@@ -1,23 +1,38 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { navImages, navLinks } from '@/config';
 import { NavLink, NavLinkImage } from '@/components/nav';
+import Image from 'next/image';
+import { ImageButton } from '../button';
 
 const NavBar = () => {
-    const pathname = usePathname()
+    const pathname = usePathname();
+    const router = useRouter();
+    const isPathInNavLinks = navLinks.some(link => pathname === link.href);
 
     return (
         <header className='px-8 w-full'>
             <nav className='flex justify-between items-center self-stretch'>
                 <div className='flex items-start gap-4'>
-                    {navLinks.map(({ href, label, isNavLink }) => (
-                        <NavLink key={href} href={href} label={label} active={pathname === href} />
-                    ))}
+                    {!isPathInNavLinks ? (
+                        <ImageButton imageSrc='/icons/chevron-left.svg' label='Back' height={32} width={16} onClick={router.back} isShowLabel={true} />
+                    ) : (
+                        navLinks.map(({ href, label }) => (
+                            <NavLink key={href} href={href} label={label} active={pathname === href} />
+                        ))
+                    )}
                 </div>
                 <div className='flex items-start gap-4'>
-                    {navImages.map(({ href, label, imgSrc }) => (
-                        <NavLinkImage key={href} href={href} label={label} imgSrc={imgSrc} />
+                    {navImages.map(({ href, label, imgSrc, width, height }) => (
+                        <NavLinkImage
+                            key={href}
+                            href={href}
+                            label={label}
+                            width={width}
+                            height={height}
+                            imgSrc={imgSrc}
+                            isShowLabel={false} />
                     ))}
                 </div>
             </nav>

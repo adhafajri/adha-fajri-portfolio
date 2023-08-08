@@ -4,7 +4,7 @@ export const navLinks = [
 ];
 
 export const navImages = [
-    { href: "https://www.linkedin.com/in/adhafajri/", label: "LinkedIn", imgSrc: "/linkedIn.svg" },
-    { href: "https://github.com/adhafajri", label: "Github", imgSrc: "/github.svg" },
-    { href: "https://medium.com/@adha_fajri", label: "Medium", imgSrc: "/medium.png" },
+    { href: "https://www.linkedin.com/in/adhafajri/", label: "LinkedIn", imgSrc: "/icons/linkedIn.svg", width: 32, height: 32 },
+    { href: "https://github.com/adhafajri", label: "Github", imgSrc: "/icons/github.svg", width: 32, height: 32 },
+    { href: "https://medium.com/@adha_fajri", label: "Medium", imgSrc: "/icons/medium.png", width: 45, height: 45 },
 ];
