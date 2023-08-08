@@ -22,11 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} font-poppins inline-flex flex-col items-start py-8 gap-32 w-full bg-[#23252A]`}>
+      <body className={`${poppins.variable} font-poppins inline-flex flex-col items-start py-8 gap-8 w-full bg-[#23252A]`}>
         <NavBar />
-
         {children}
-
         <Footer />
       </body>
     </html>

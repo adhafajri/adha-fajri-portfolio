@@ -8,7 +8,7 @@ const NavBar = () => {
     const pathname = usePathname()
 
     return (
-        <header className='px-16 w-full'>
+        <header className='px-8 w-full'>
             <nav className='flex justify-between items-center self-stretch'>
                 <div className='flex items-start gap-4'>
                     {navLinks.map(({ href, label, isNavLink }) => (
