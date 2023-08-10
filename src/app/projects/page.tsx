@@ -12,7 +12,7 @@ export default async function Projects() {
     return (
         <main className='flex flex-col px-8 gap-4 items-end h-full self-stretch'>
 
-                {/* <DropdownButton text="All Projects" optionList={categoryList || []} /> */}
+            {/* <DropdownButton text="All Projects" optionList={categoryList || []} /> */}
 
 
             <div className='flex flex-col items-start gap-4 self-stretch'>
