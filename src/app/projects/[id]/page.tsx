@@ -1,11 +1,7 @@
-import { CarouselButton, ImageButton } from "@/components/button";
 import { CarouselCard } from "@/components/card";
 import { NavLinkImage } from "@/components/nav";
 import { db } from "@/config";
-import { project } from "@/model";
 import { getProject } from "@/service/firebase";
-import Image from "next/image";
-import { useEffect, useState } from "react";
 
 export default async function Page({ params }: any) {
     const { id } = params;

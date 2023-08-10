@@ -9,9 +9,18 @@ export class project {
     media: [string];
     github: string;
     link: string;
-    category: DocumentReference;
+    // category: DocumentReference;
 
-    constructor(id: string, name: string, description: string, techStack: [string], media: [string], github: string, link: string, category: DocumentReference) {
+    constructor(
+        id: string,
+        name: string,
+        description: string,
+        techStack: [string],
+        media: [string],
+        github: string,
+        link: string,
+        // category: DocumentReference
+    ) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -19,7 +28,7 @@ export class project {
         this.media = media;
         this.github = github;
         this.link = link;
-        this.category = category;
+        // this.category = category;
     }
 }
 
@@ -34,7 +43,7 @@ export const projectConverter = {
             media: project.media,
             github: project.github,
             link: project.link,
-            category: project.category,
+            // category: project.category,
         };
     },
     fromFirestore: (snapshot: DocumentSnapshot, options: SnapshotOptions) => {
@@ -42,6 +51,15 @@ export const projectConverter = {
 
         if (data == null) return;
 
-        return new project(data.id, data.name, data.description, data.techStack, data.media, data.github, data.link, data.category);
+        return new project(
+            data.id,
+            data.name,
+            data.description,
+            data.techStack,
+            data.media,
+            data.github,
+            data.link,
+            // data.category,
+        );
     }
 };
