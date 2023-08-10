@@ -9,7 +9,7 @@ export interface NavLinkProps {
 const NavLink = ({ href, label, active }: NavLinkProps) => {
   return (
     <Link href={href} className={`flex flex-col items-start rounded-2xl p-4 ${active ? 'bg-[#FF5943]' : ''}`}>
-      <span className="text-center text-white text-xl font-poppins">{label}</span>
+      <span className="text-center text-white text-sm font-normal">{label}</span>
     </Link>
   )
 }

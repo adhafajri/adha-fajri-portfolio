@@ -12,11 +12,11 @@ const NavBar = () => {
     const isPathInNavLinks = navLinks.some(link => pathname === link.href);
 
     return (
-        <header className='px-8 w-full'>
+        <header className='px-8 pt-8 w-full'>
             <nav className='flex justify-between items-center self-stretch'>
                 <div className='flex items-start gap-4'>
                     {!isPathInNavLinks ? (
-                        <ImageButton imageSrc='/icons/chevron-left.svg' label='Back' height={32} width={16} onClick={router.back} isShowLabel={true} />
+                        <ImageButton imageSrc='/icons/chevron-left.svg' label='Back' height={10.6} width={10.6} onClick={router.back} isShowLabel={true} />
                     ) : (
                         navLinks.map(({ href, label }) => (
                             <NavLink key={href} href={href} label={label} active={pathname === href} />

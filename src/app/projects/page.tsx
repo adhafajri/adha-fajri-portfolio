@@ -1,24 +1,33 @@
 import DropdownButton from "@/components/button/dropdown-button";
 import { ProjectCard } from "@/components/card";
+import { db } from "@/config";
+import { getCategoryList, getProjectList } from "@/service/firebase";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Projects() {
+export default async function Projects() {
+    const projects = await getProjectList(db); // if selectedCategory exist,
+    console.log('[projects]', projects);
+
     return (
-        <main className='flex flex-col px-8 gap-4 items-end mt-8 self-stretch'>
-            <DropdownButton text="test" optionList={['test1', 'test2', 'test3']} />
+        <main className='flex flex-col px-8 gap-4 items-end h-full self-stretch'>
+
+                {/* <DropdownButton text="All Projects" optionList={categoryList || []} /> */}
+
+
             <div className='flex flex-col items-start gap-4 self-stretch'>
-                <ProjectCard
-                    imageSrc=""
-                    title="Project Name"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    techStack={['test1', 'test2', 'test3']}
-                />
-                <ProjectCard
-                    imageSrc=""
-                    title="Project Name"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    techStack={['test1', 'test2', 'test3']}
-                />
+                {projects.length > 0 && projects.map(project => {
+                    return (
+                        <Link href={`/projects/${project?.id}`} className="w-full">
+                            <ProjectCard
+                                imageSrc={project?.media[0] || ''}
+                                title={project?.name || ''}
+                                description={project?.description || ''}
+                                techStack={project?.techStack || []}
+                            />
+                        </Link>
+                    )
+                })}
             </div>
         </main>
     )
