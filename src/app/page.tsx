@@ -113,8 +113,8 @@ export default async function AboutMe() {
           <div className="flex flex-col items-end gap-4 self-stretch">
             <HeaderText text="Skills" />
             <div className="flex justify-end items-start content-start gap-4 self-stretch flex-wrap">
-              {skills.length > 0 && skills.map((skill) => (
-                <SkillCard text={skill?.skill || ''} />
+              {skills.length > 0 && skills.map((skill, index) => (
+                <SkillCard key={index} text={skill?.skill || ''} />
               ))}
             </div>
           </div>

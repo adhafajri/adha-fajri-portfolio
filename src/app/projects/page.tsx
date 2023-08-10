@@ -18,7 +18,7 @@ export default async function Projects() {
             <div className='flex flex-col items-start gap-4 self-stretch'>
                 {projects.length > 0 && projects.map(project => {
                     return (
-                        <Link href={`/projects/${project?.id}`} className="w-full">
+                        <Link key={project?.id} href={`/projects/${project?.id}`} className="w-full">
                             <ProjectCard
                                 imageSrc={project?.media[0] || ''}
                                 title={project?.name || ''}

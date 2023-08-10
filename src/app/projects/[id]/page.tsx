@@ -1,5 +1,3 @@
-"use client"
-
 import { CarouselButton, ImageButton } from "@/components/button";
 import { CarouselCard } from "@/components/card";
 import { NavLinkImage } from "@/components/nav";
