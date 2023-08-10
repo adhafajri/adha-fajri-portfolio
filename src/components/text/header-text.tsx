@@ -1,3 +1,3 @@
-const HeaderText = ({ text }: { text: string }) => <p className='text-2-5xl text-white font-bold'>{text}</p>
+const HeaderText = ({ text }: { text: string }) => <p className='text-2xl text-white font-bold'>{text}</p>
 
 export default HeaderText;
