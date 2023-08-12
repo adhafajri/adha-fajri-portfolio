@@ -5,10 +5,10 @@ const NavLinkImage = ({ href, label, width, height, imgSrc, isShowLabel }: { hre
     return (
         <Link href={href} className='flex items-center rounded-2xl bg-[#FF5943] p-4 gap-4'>
             {isShowLabel && (
-                <span className="text-center text-white text-xl font-poppins">{label}</span>
+                <span className="text-center text-white text-sm font-normal">{label}</span>
             )}
 
-            <Image src={imgSrc} alt={label} width={width} height={height} objectFit="contain" />
+            <Image src={imgSrc} alt={label} width={width} height={height} />
         </Link>
     )
 }
