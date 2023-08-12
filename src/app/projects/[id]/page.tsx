@@ -11,32 +11,32 @@ export default async function Page({ params }: any) {
     const description = DOMPurify.sanitize(project?.description || '');
 
     return (
-        <main className='w-full px-8'>
-            <div className='items-center gap-8 rounded-2xl bg-white flex p-8 flex-col'>
-                <div className='flex items-center'>
-                    <p className='text-2xl font-medium text-black'>
+        <main className='w-full px-4 sm:px-8 md:px-16 lg:px-24'>
+            <div className='items-center gap-4 sm:gap-8 rounded-2xl bg-white flex p-4 sm:p-8 flex-col'>
+                <div className='flex items-center mb-4 md:mb-0'>
+                    <p className='text-xl sm:text-2xl font-medium text-black'>
                         {project?.name || ''}
                     </p>
                 </div>
 
                 <CarouselCard project={project} data-superjson />
 
-                <div className='flex flex-col items-start gap-4 flex-[1_0_0%] w-full'>
+                <div className='flex flex-col items-start gap-4 flex-1 w-full mt-4 md:mt-0'>
                     <div className='flex flex-col justify-center items-start gap-2 self-stretch'>
                         <div
-                            className='self-stretch text-xl font-extralight text-black'
+                            className='self-stretch text-lg sm:text-xl font-extralight text-black'
                             dangerouslySetInnerHTML={{ __html: description }}
                         />
                     </div>
 
-                    <div className='flex justify-between items-start w-full'>
-                        <div className='flex items-start gap-4'>
+                    <div className='flex flex-col sm:flex-row justify-between items-start w-full mt-4'>
+                        <div className='flex items-start gap-2 sm:gap-4 mb-4 sm:mb-0'>
                             {project?.techStack?.map((techStack, index) => (
                                 <TechStackCard key={index} text={techStack} />
                             ))}
                         </div>
 
-                        <div className='flex items-end gap-4'>
+                        <div className='flex items-start sm:items-end gap-2 sm:gap-4'>
                             {project?.github && (
                                 <NavLinkImage
                                     href={project?.github || ''}

@@ -18,7 +18,7 @@ const NavLinkImage = ({
     isShowLabel: boolean,
     isExternalLink?: boolean
 }) => {
-    const commonClasses = 'flex items-center rounded-2xl bg-orange p-4 gap-4 hover:bg-orange-hover active:bg-orange-active transform hover:scale-105 transition duration-300';
+    const commonClasses = 'flex items-center rounded-2xl bg-orange p-4 gap-4 md:w-auto w-full hover:bg-orange-hover active:bg-orange-active transform hover:scale-105 transition duration-300';
 
     return (
         isExternalLink ? (

@@ -23,10 +23,12 @@ export default async function AboutMe() {
   ]);
 
   return (
-    <main className='flex flex-col items-center gap-16 mt-32 w-full'>
-      <div className='flex items-center justify-between pr-8 mb-24 w-full'>
-        <div className="flex flex-col items-start gap-8 p-8 w-1/2">
-          <p className="text-4xl text-white font-extralight">
+    <main className='flex flex-col items-center gap-8 sm:gap-16 mt-8 sm:mt-32 w-full'>
+
+      <div className='flex flex-col sm:flex-row items-center justify-between pr-8 mb-24 w-full'>
+
+        <div className="order-2 sm:order-1 flex flex-col items-start gap-8 p-8 w-full sm:w-1/2">
+          <p className="text-2xl sm:text-4xl text-white font-extralight">
             Hi, I&apos;m Muhammad Adha <span className="font-bold">Fajri</span> Jonison <span role="img" aria-label="wave" className="inline-block transform transition-transform duration-300 hover:rotate-45">👋</span>
             <br />
             I&apos;m an aspiring <span className="font-bold">iOS Developer!</span>
@@ -40,7 +42,8 @@ export default async function AboutMe() {
             <NavLinkImage
               href={'https://firebasestorage.googleapis.com/v0/b/muhammad-adha-fajri-portfolio.appspot.com/o/resume%2FResume%2019-Jul-2023.pdf?alt=media&token=4cb69426-1963-4c70-a4ea-1f17e0d055a6'}
               imgSrc='/icons/document-text.svg'
-              label='Check Out My Resume' height={32}
+              label='Check Out My Resume'
+              height={32}
               width={32}
               isShowLabel={true}
               isExternalLink={true}
@@ -56,18 +59,18 @@ export default async function AboutMe() {
           </div>
         </div>
 
-        <div className="flex flex-col -space-y-8">
+        <div className="order-1 sm:order-2 flex flex-col -space-y-8">
           <Image src={"/picture.png"} alt={"Self Picture"} width={327} height={327} />
           <div className="inline-flex justify-center items-center p-4 rounded-2xl bg-white">
-            <p className="text-2xl text-black font-medium">
+            <p className="text-xl sm:text-2xl text-black font-medium">
               2+ years experience
             </p>
           </div>
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-8 px-8 items-start w-full">
-        <div className="grid gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 px-4 sm:px-8 items-start w-full">
+        <div className="grid gap-4 sm:gap-8">
           <div className="flex flex-col items-start gap-8 h-auto">
             <HeaderText text="Work Experience" />
             {workExperiences.length > 0 && workExperiences.map((experience) => {
@@ -94,9 +97,7 @@ export default async function AboutMe() {
           </div>
         </div>
 
-        <div className="grid gap-8">
-
-
+        <div className="grid gap-4 sm:gap-8">
           <div className="flex flex-col items-start gap-8 h-auto">
             <HeaderText text="Education" />
             {educations.length > 0 && educations.map((education) => {

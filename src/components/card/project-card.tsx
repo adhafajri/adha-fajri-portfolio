@@ -7,21 +7,21 @@ const ProjectCard = ({ imageSrc, title, description, techStack }: { imageSrc: st
 
     const descriptionSanitize = DOMPurify.sanitize(description || '');
     return (
-        <div className='flex p-8 items-start gap-4 self-stretch rounded-2xl bg-white hover:bg-gray-100 active:bg-gray-200 hover:shadow-md transition-transform duration-300 transform hover:-translate-y-1'>
-            <div className='rounded-2xl overflow-hidden'>
+        <div className='flex flex-col md:flex-row p-4 md:p-8 items-start gap-2 md:gap-4 self-stretch rounded-2xl bg-white hover:bg-gray-100 active:bg-gray-200 hover:shadow-md transition-transform duration-300 transform hover:-translate-y-1'>
+            <div className='rounded-2xl overflow-hidden mb-4 md:mb-0'>
                 <Image src={imageSrc} alt={title} width={360} height={256} />
             </div>
-            <div className='flex flex-col items-start gap-4 flex-[1_0_0%]'>
-                <div className='flex flex-col justify-center items-start gap-2 self-stretch'>
-                    <p className='text-2xl font-medium text-black'>
+            <div className='flex flex-col items-start gap-2 md:gap-4 flex-[1_0_0%]'>
+                <div className='flex flex-col justify-center items-start gap-1 md:gap-2 self-stretch'>
+                    <p className='text-xl md:text-2xl font-medium text-black'>
                         {title}
                     </p>
-                    <div className="self-stretch text-xl font-extralight text-black"
-                        dangerouslySetInnerHTML={{ __html: description }}
+                    <div className="self-stretch text-lg md:text-xl font-extralight text-black"
+                        dangerouslySetInnerHTML={{ __html: descriptionSanitize }}
                     />
                 </div>
 
-                <div className='flex items-start gap-4'>
+                <div className='flex flex-wrap items-start gap-2 md:gap-4'>
                     {techStack.map((tech, index) =>
                         <TechStackCard key={index} text={tech} />
                     )}

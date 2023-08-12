@@ -10,10 +10,7 @@ export default async function Projects() {
     console.log('[projects]', projects);
 
     return (
-        <main className='flex flex-col px-8 gap-4 items-end h-full self-stretch'>
-
-            {/* <DropdownButton text="All Projects" optionList={categoryList || []} /> */}
-
+        <main className='flex flex-col px-4 md:px-8 gap-2 md:gap-4 items-end self-stretch'>
             <div className='flex flex-col items-start gap-4 self-stretch'>
                 {projects.length > 0 && projects.map(project => {
                     return (
