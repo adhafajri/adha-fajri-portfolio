@@ -33,17 +33,27 @@ export default async function AboutMe() {
           </p>
 
           <p className="text-base text-white font-extralight">
-            With my roots as a full-stack developer, I've honed my skills across mobile, web, and backend platforms. Now, as an all-rounder, I don't just develop - I design, animate, and even dive into video editing, making me a one-stop solution for holistic digital projects. Armed with hard work and grit, my commitment to constant upskilling led me to Dicoding Academy online courses and Tokopedia Academy DevCamp in 2022, and I'm now immersing myself further at the Apple Developer Academy. I'm actively seeking a full-time position as an iOS Developer where I can bring my diverse set of skills to the table.
+            With my roots as a full-stack developer, I&apos;ve honed my skills across mobile, web, and backend platforms. Now, as an all-rounder, I don&apos;t just develop - I design, animate, and even dive into video editing, making me a one-stop solution for holistic digital projects. Armed with hard work and grit, my commitment to constant upskilling led me to Dicoding Academy online courses and Tokopedia Academy DevCamp in 2022, and I&apos;m now immersing myself further at the Apple Developer Academy. I&apos;m actively seeking a full-time position as an iOS Developer where I can bring my diverse set of skills to the table.
           </p>
 
-          <NavLinkImage
-            href={'https://firebasestorage.googleapis.com/v0/b/muhammad-adha-fajri-portfolio.appspot.com/o/resume%2FResume%2019-Jul-2023.pdf?alt=media&token=4cb69426-1963-4c70-a4ea-1f17e0d055a6'}
-            imgSrc='/icons/document-text.svg'
-            label='Check Out My Resume' height={32}
-            width={32}
-            isShowLabel={true}
-            isExternalLink={true}
-          />
+          <div className='flex gap-8'>
+            <NavLinkImage
+              href={'https://firebasestorage.googleapis.com/v0/b/muhammad-adha-fajri-portfolio.appspot.com/o/resume%2FResume%2019-Jul-2023.pdf?alt=media&token=4cb69426-1963-4c70-a4ea-1f17e0d055a6'}
+              imgSrc='/icons/document-text.svg'
+              label='Check Out My Resume' height={32}
+              width={32}
+              isShowLabel={true}
+              isExternalLink={true}
+            />
+
+            <NavLinkImage
+              href={'/projects'}
+              imgSrc='/icons/chevron-right.svg'
+              label='See Projects' height={16}
+              width={16}
+              isShowLabel={true}
+            />
+          </div>
         </div>
 
         <div className="flex flex-col -space-y-8">
