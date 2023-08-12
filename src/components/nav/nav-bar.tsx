@@ -32,7 +32,9 @@ const NavBar = () => {
                             width={width}
                             height={height}
                             imgSrc={imgSrc}
-                            isShowLabel={false} />
+                            isShowLabel={false}
+                            isExternalLink={true}
+                        />
                     ))}
                 </div>
             </nav>

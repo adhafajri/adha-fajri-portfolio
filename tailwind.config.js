@@ -14,6 +14,8 @@ module.exports = {
         'white': '#FDFFFA',
         'black': '#23252A',
         'orange': '#FF5943',
+        'orange-hover': '#FF4730',
+        'orange-active': '#FF351D',
         'yellow': '#FED20D',
       },
       fontFamily: {

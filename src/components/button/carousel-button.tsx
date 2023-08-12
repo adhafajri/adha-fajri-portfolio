@@ -1,4 +1,4 @@
-"use client"
+"use strict";
 
 import { Circle } from '../shape';
 
@@ -10,8 +10,8 @@ const CarouselButton = ({ amount, activeIndex, onActiveIndexChange }: { amount: 
     return (
         <div className='flex items-center gap-4'>
             {Array.from({ length: amount }, (_, index) => (
-                <button key={index} onClick={() => handleClick(index)}>
-                    <div className={`w-4 h-4 ${activeIndex === index ? 'bg-orange' : 'bg-gray-200'} rounded-full`} />
+                <button key={index} onClick={() => handleClick(index)} className="focus:outline-none">
+                    <div className={`w-3 h-3 ${activeIndex === index ? 'bg-orange active:bg-orange-dark' : 'bg-gray-200 hover:bg-gray-400 active:bg-gray-500'} rounded-full transition duration-300`} />
                 </button>
             ))}
         </div>

@@ -16,15 +16,14 @@ const CarouselCard = ({ project }: { project: project | undefined }) => {
     };
 
     const decrementActiveIndex = () => {
-        console.log('[decrementActiveIndex]', decrementActiveIndex);
         setActiveIndex((prevIndex) => (prevIndex - 1 >= 0 ? prevIndex - 1 : amount - 1));
     };
 
     return (
-        <div className="w-full flex-col justify-start items-start gap-8 inline-flex">
-            <div className="self-stretch justify-between items-center gap-8 inline-flex w-full">
+        <div className="w-full flex-col justify-center items-center gap-8 inline-flex">
+            <div className="self-stretch justify-center items-center gap-8 inline-flex w-full">
                 {amount > 1 && (
-                    <ImageButton imageSrc='/icons/chevron-left.svg' label='Left' width={32} height={32} onClick={decrementActiveIndex} isShowLabel={false} />
+                    <ImageButton imageSrc='/icons/chevron-left.svg' label='Left' width={16} height={16} onClick={decrementActiveIndex} isShowLabel={false} />
                 )}
 
                 {/* Only show the media that corresponds to the activeIndex */}
@@ -39,16 +38,18 @@ const CarouselCard = ({ project }: { project: project | undefined }) => {
 
                     if (isImage) {
                         return (
-                            <div key={index} className="w-[1080px] bg-zinc-300 rounded-2xl overflow-hidden">
+                            <div key={index} className="flex justify-center items-center w-[720px] rounded-2xl overflow-hidden">
                                 <Image src={mediaItem} alt={`Project media ${index}`} width={1080} height={720} />
                             </div>
                         );
                     } else if (isVideo) {
                         return (
-                            <video key={index} className='w-[1080px] bg-zinc-300 rounded-2xl' controls>
-                                <source src={mediaItem} type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </video>
+                            <div key={index} className="flex justify-center items-center w-[720px] bg-zinc-300 rounded-2xl overflow-hidden">
+                                <video className='w-[1080px] bg-zinc-300 rounded-2xl' controls>
+                                    <source src={mediaItem} type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
                         );
                     } else {
                         return null; // or you can return a placeholder or error message
@@ -56,7 +57,7 @@ const CarouselCard = ({ project }: { project: project | undefined }) => {
                 })}
 
                 {amount > 1 && (
-                    <ImageButton imageSrc='/icons/chevron-right.svg' label='Right' width={32} height={32} onClick={incrementActiveIndex} isShowLabel={false} />
+                    <ImageButton imageSrc='/icons/chevron-right.svg' label='Right' width={16} height={16} onClick={incrementActiveIndex} isShowLabel={false} />
                 )}
             </div>
             {amount > 1 && (
@@ -65,6 +66,7 @@ const CarouselCard = ({ project }: { project: project | undefined }) => {
                 </div>
             )}
         </div>
+
     )
 }
 

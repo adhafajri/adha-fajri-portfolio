@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} font-poppins inline-flex flex-col justify-between items-start gap-8 w-full h-screen bg-[#23252A]`}>
+      <body className={`${poppins.variable} font-poppins inline-flex flex-col justify-between items-start gap-8 w-full h-screen bg-black`}>
         <NavBar />
         {children}
         <Footer />

@@ -5,7 +5,7 @@ const ExperienceCard = ({ title, subtitle, date, experienceList }: { title: stri
     return (
         <div className="flex flex-col items-start justify-center p-8 w-full rounded-2xl bg-white">
             <div className="flex items-center gap-2">
-                <TitleText text={title} /> <DateText text={`(${date})`} />
+                <p><TitleText text={title} /> <DateText text={`(${date})`} /></p>
             </div>
             <SubtitleText text={subtitle} />
             <ListText textList={experienceList} />

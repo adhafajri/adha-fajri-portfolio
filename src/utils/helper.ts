@@ -13,5 +13,5 @@ export function formatExperienceDate(startDate: FirebaseFirestore.Timestamp | un
 
     if (endDate?.toDate() == null) return `${formatDate(startDate.toDate())} - Now`;
 
-    return `${formatDate(startDate.toDate())} ${formatDate(endDate.toDate())}`
+    return `${formatDate(startDate.toDate())} - ${formatDate(endDate.toDate())}`
 }

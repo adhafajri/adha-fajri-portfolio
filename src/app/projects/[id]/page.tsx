@@ -1,14 +1,11 @@
-import { CarouselCard } from "@/components/card";
+import { CarouselCard, TechStackCard } from "@/components/card";
 import { NavLinkImage } from "@/components/nav";
 import { db } from "@/config";
 import { getProject } from "@/service/firebase";
 
 export default async function Page({ params }: any) {
     const { id } = params;
-    console.log('[id]', id);
-
     const project = await getProject(db, id);
-    console.log('[project]', project);
 
     return (
         <main className='w-full px-8'>
@@ -19,7 +16,7 @@ export default async function Page({ params }: any) {
                     </p>
                 </div>
 
-                <CarouselCard project={project} />
+                <CarouselCard project={project} data-superjson />
 
                 <div className='flex flex-col items-start gap-4 flex-[1_0_0%] w-full'>
                     <div className='flex flex-col justify-center items-start gap-2 self-stretch'>
@@ -31,15 +28,32 @@ export default async function Page({ params }: any) {
                     <div className='flex justify-between items-start w-full'>
                         <div className='flex items-start gap-4'>
                             {project?.techStack?.map((techStack, index) => (
-                                <div key={index} className='flex p-4 flex-col justify-center items-start gap-2 rounded-2xl bg-yellow'>
-                                    <p key={index} className='text-black text-base font-normal'>{techStack}</p>
-                                </div>
+                                <TechStackCard key={index} text={techStack} />
                             ))}
                         </div>
 
                         <div className='flex items-end gap-4'>
-                            <NavLinkImage href={project?.github || ''} imgSrc='/icons/github.svg' label='Open Github' height={32} width={32} isShowLabel={true} />
-                            <NavLinkImage href={project?.link || ''} imgSrc='/icons/arrow-top-right-on-square.svg' label='Open Projects' height={32} width={32} isShowLabel={true} />
+                            {project?.github && (
+                                <NavLinkImage
+                                    href={project?.github || ''}
+                                    imgSrc='/icons/github.svg'
+                                    label='Open Github' height={32}
+                                    width={32}
+                                    isShowLabel={true}
+                                    isExternalLink={true}
+                                />
+                            )}
+                            {project?.link && (
+                                <NavLinkImage
+                                    href={project?.link || ''}
+                                    imgSrc='/icons/arrow-top-right-on-square.svg'
+                                    label='Open Projects'
+                                    height={32}
+                                    width={32}
+                                    isShowLabel={true}
+                                    isExternalLink={true}
+                                />
+                            )}
                         </div>
                     </div>
                 </div>

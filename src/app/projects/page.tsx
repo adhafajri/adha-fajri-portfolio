@@ -14,7 +14,6 @@ export default async function Projects() {
 
             {/* <DropdownButton text="All Projects" optionList={categoryList || []} /> */}
 
-
             <div className='flex flex-col items-start gap-4 self-stretch'>
                 {projects.length > 0 && projects.map(project => {
                     return (
