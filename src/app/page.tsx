@@ -23,11 +23,11 @@ export default async function AboutMe() {
   ]);
 
   return (
-    <main className='flex flex-col items-center gap-8 sm:gap-16 mt-8 sm:mt-32 w-full'>
+    <main className='flex flex-col items-center gap-8 sm:gap-16 mt-8 w-full'>
 
-      <div className='flex flex-col sm:flex-row items-center justify-between pr-8 mb-24 w-full'>
+      <div className='flex flex-col sm:flex-row items-center justify-between pr-8 w-full'>
 
-        <div className="order-2 sm:order-1 flex flex-col items-start gap-8 p-8 w-full sm:w-1/2">
+        <div className="order-2 sm:order-1 flex flex-col items-start gap-8 p-8 w-full sm:w-2/3">
           <p className="text-2xl sm:text-4xl text-white font-extralight">
             Hi, I&apos;m Muhammad Adha <span className="font-bold">Fajri</span> Jonison <span role="img" aria-label="wave" className="inline-block transform transition-transform duration-300 hover:rotate-45">👋</span>
             <br />
@@ -38,7 +38,7 @@ export default async function AboutMe() {
             With my roots as a full-stack developer, I&apos;ve honed my skills across mobile, web, and backend platforms. Now, as an all-rounder, I don&apos;t just develop - I design, animate, and even dive into video editing, making me a one-stop solution for holistic digital projects. Armed with hard work and grit, my commitment to constant upskilling led me to Dicoding Academy online courses and Tokopedia Academy DevCamp in 2022, and I&apos;m now immersing myself further at the Apple Developer Academy. I&apos;m actively seeking a full-time position as an iOS Developer where I can bring my diverse set of skills to the table.
           </p>
 
-          <div className='flex gap-8'>
+          <div className='flex flex-col md:flex-row gap-8'>
             <NavLinkImage
               href={'https://firebasestorage.googleapis.com/v0/b/muhammad-adha-fajri-portfolio.appspot.com/o/resume%2FResume%2019-Jul-2023.pdf?alt=media&token=4cb69426-1963-4c70-a4ea-1f17e0d055a6'}
               imgSrc='/icons/document-text.svg'
@@ -87,14 +87,7 @@ export default async function AboutMe() {
             })}
           </div>
 
-          <div className="flex flex-col items-start gap-8">
-            <HeaderText text="Skills" />
-            <div className="flex items-start content-start gap-4 self-stretch flex-wrap">
-              {skills.length > 0 && skills.map((skill, index) => (
-                <SkillCard key={index} text={skill?.skill || ''} />
-              ))}
-            </div>
-          </div>
+
         </div>
 
         <div className="grid gap-4 sm:gap-8">
@@ -145,9 +138,16 @@ export default async function AboutMe() {
               )
             })}
           </div>
+
+          <div className="flex flex-col items-start gap-8">
+            <HeaderText text="Skills" />
+            <div className="flex items-start content-start gap-4 self-stretch flex-wrap">
+              {skills.length > 0 && skills.map((skill, index) => (
+                <SkillCard key={index} text={skill?.skill || ''} />
+              ))}
+            </div>
+          </div>
         </div>
-
-
       </div>
     </main>
   )
