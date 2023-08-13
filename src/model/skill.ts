@@ -1,6 +1,6 @@
 import { DocumentSnapshot, SnapshotOptions } from "firebase/firestore";
 
-export class skill {
+export class Skill {
     id: string;
     skill: string;
 
@@ -12,7 +12,7 @@ export class skill {
 
 // Firestore data converter
 export const skillConverter = {
-    toFirestore: (skill: skill) => {
+    toFirestore: (skill: Skill) => {
         return {
             id: skill.id,
             skill: skill.skill,
@@ -23,6 +23,6 @@ export const skillConverter = {
 
         if (data == null) return;
 
-        return new skill(data.id, data.skill);
+        return new Skill(data.id, data.skill);
     }
 };

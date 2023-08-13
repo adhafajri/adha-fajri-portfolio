@@ -1,9 +1,10 @@
+import { Size } from "@/config/size-config";
 import { ContentText, HeaderText } from "../text";
 
-const TechStackCard = ({ text }: { text: string }) => {
+const TechStackCard = ({ text, bgColor, textColor, size = Size.medium }: { text: string | undefined, bgColor: string, textColor: string, size: Size }) => {
     return (
-        <div className='flex p-4 flex-col justify-center items-start gap-2 rounded-full bg-yellow'>
-            <p className='text-black text-sm font-normal'>{text}</p>
+        <div className={`flex flex-col justify-center items-start ${size === Size.medium ? 'gap-2 p-4' : 'p-2'} rounded-full bg-${bgColor}`}>
+            <p className={`text-${textColor} ${size === Size.medium ? 'text-sm' : ' text-xs'} font-normal line-clamp-1`}>{text}</p>
         </div>
     )
 }

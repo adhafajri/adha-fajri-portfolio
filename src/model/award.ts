@@ -1,7 +1,7 @@
 import { Timestamp } from "firebase-admin/firestore";
 import { DocumentSnapshot, SnapshotOptions } from "firebase/firestore";
 
-export class award {
+export class Award {
     id: string;
     title: string;
     issuer: string;
@@ -19,7 +19,7 @@ export class award {
 
 // Firestore data converter
 export const awardConverter = {
-    toFirestore: (award: award) => {
+    toFirestore: (award: Award) => {
         return {
             id: award.id,
             title: award.title,
@@ -33,6 +33,6 @@ export const awardConverter = {
 
         if (data == null) return;
 
-        return new award(data.id, data.title, data.issuer, data.date, data.description);
+        return new Award(data.id, data.title, data.issuer, data.date, data.description);
     }
 };

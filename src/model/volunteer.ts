@@ -1,7 +1,7 @@
 import { Timestamp } from "firebase-admin/firestore";
 import { DocumentSnapshot, SnapshotOptions } from "firebase/firestore";
 
-export class volunteer {
+export class Volunteer {
     id: string;
     organisation: string;
     position: string;
@@ -21,7 +21,7 @@ export class volunteer {
 
 // Firestore data converter
 export const volunteerConverter = {
-    toFirestore: (volunteer: volunteer) => {
+    toFirestore: (volunteer: Volunteer) => {
         return {
             id: volunteer.id,
             organisation: volunteer.organisation,
@@ -36,6 +36,6 @@ export const volunteerConverter = {
 
         if (data == null) return;
 
-        return new volunteer(data.id, data.organisation, data.position, data.startDate, data.endDate, data.description);
+        return new Volunteer(data.id, data.organisation, data.position, data.startDate, data.endDate, data.description);
     }
 };

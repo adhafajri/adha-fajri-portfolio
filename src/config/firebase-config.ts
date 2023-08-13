@@ -1,4 +1,4 @@
-export enum firebaseCollection {
+export enum FirebaseCollection {
     workExperiences = 'workExperiences',
     educations = 'educations',
     skills = 'skills',
