@@ -1,3 +1,3 @@
-const DateText = ({ text }: { text: string }) => <p className='text-black text-sm font-thin'>{text}</p>
+const DateText = ({ text }: { text: string }) => <span className='text-black text-xs font-thin'>{text}</span>
 
 export default DateText;
