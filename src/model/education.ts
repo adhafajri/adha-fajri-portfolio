@@ -1,7 +1,7 @@
 import { Timestamp } from "firebase-admin/firestore";
 import { DocumentSnapshot, SnapshotOptions } from "firebase/firestore";
 
-export class education {
+export class Education {
     id: string;
     school: string;
     degree: string;
@@ -23,7 +23,7 @@ export class education {
 
 // Firestore data converter
 export const educationConverter = {
-    toFirestore: (education: education) => {
+    toFirestore: (education: Education) => {
         return {
             id: education.id,
             school: education.school,
@@ -39,6 +39,6 @@ export const educationConverter = {
 
         if (data == null) return;
 
-        return new education(data.id, data.school, data.degree, data.fieldOfStudy, data.startDate, data.endDate, data.description);
+        return new Education(data.id, data.school, data.degree, data.fieldOfStudy, data.startDate, data.endDate, data.description);
     }
 };

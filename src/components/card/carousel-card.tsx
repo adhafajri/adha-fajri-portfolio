@@ -3,13 +3,14 @@
 import { formatDate } from "@/utils";
 import { DateText, ListText, SubtitleText, TitleText } from "../text";
 import { ImageButton, CarouselButton } from "../button";
-import { project } from "@/model";
+import { Project } from "@/model";
 import { useState } from "react";
 import Image from "next/image";
 
-const CarouselCard = ({ project }: { project: project | undefined }) => {
+const CarouselCard = ({ media }: { media: string[] | undefined }) => {
     const [activeIndex, setActiveIndex] = useState(0);
-    const amount = project?.media.length || 0; // the total number of slides
+    const amount = media?.length || 0; // the total number of slides
+    console.log('[CarouselCard][amount]', amount);
 
     const incrementActiveIndex = () => {
         setActiveIndex((prevIndex) => (prevIndex + 1) % amount);
@@ -24,13 +25,29 @@ const CarouselCard = ({ project }: { project: project | undefined }) => {
             <div className="self-stretch justify-center items-center gap-8 inline-flex w-full relative transition-transform duration-500 ease-in-out transform">
 
                 {/* Only show the media that corresponds to the activeIndex */}
-                {project?.media.map((mediaItem, index) => {
-
+                {media?.map((mediaItem, index) => {
+                    console.log('[mediaItem]', mediaItem);
                     const url = new URL(mediaItem);
                     const pathname = url.pathname;
+                    let lastSegment = pathname.substring(pathname.lastIndexOf('/'));
 
-                    const isImage = ['.jpg', '.jpeg', '.png'].some(ext => pathname.endsWith(ext));
-                    const isVideo = ['.mp4', '.webm'].some(ext => pathname.endsWith(ext));
+                    // If the last segment of the pathname doesn't have an extension, check the query parameters
+                    if (!lastSegment.includes('.')) {
+                        const queryEntries = Array.from(url.searchParams.entries());
+                        for (let [, value] of queryEntries) {
+                            if (value.includes('.')) {
+                                lastSegment = value;
+                                break;
+                            }
+                        }
+                    }
+
+                    const isImage = ['.jpg', '.jpeg', '.png'].some(ext => lastSegment.endsWith(ext));
+                    const isVideo = ['.mp4', '.webm'].some(ext => lastSegment.endsWith(ext));
+
+                    console.log('Is Image:', isImage);
+                    console.log('Is Video:', isVideo);
+
 
                     return (
                         <div key={index} className={`justify-center items-center w-full sm:w-[360px] md:w-[480px] lg:w-[600px] xl:w-[720px] rounded-2xl overflow-hidden duration-700 ease-in-out ${activeIndex === index ? '' : 'hidden'} `}>

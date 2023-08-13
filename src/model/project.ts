@@ -1,10 +1,11 @@
 import { DocumentReference, Timestamp } from "firebase-admin/firestore";
 import { DocumentSnapshot, SnapshotOptions } from "firebase/firestore";
 
-export class project {
+export class Project {
     id: string;
     name: string;
     description: string;
+    platform: string;
     techStack: [string];
     media: [string];
     github: string;
@@ -15,6 +16,7 @@ export class project {
         id: string,
         name: string,
         description: string,
+        platform: string,
         techStack: [string],
         media: [string],
         github: string,
@@ -24,6 +26,7 @@ export class project {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.platform = platform;
         this.techStack = techStack;
         this.media = media;
         this.github = github;
@@ -34,11 +37,12 @@ export class project {
 
 // Firestore data converter
 export const projectConverter = {
-    toFirestore: (project: project) => {
+    toFirestore: (project: Project) => {
         return {
             id: project.id,
             name: project.name,
             description: project.description,
+            platform: project.platform,
             techStack: project.techStack,
             media: project.media,
             github: project.github,
@@ -51,15 +55,15 @@ export const projectConverter = {
 
         if (data == null) return;
 
-        return new project(
+        return new Project(
             data.id,
             data.name,
             data.description,
+            data.platform,
             data.techStack,
             data.media,
             data.github,
             data.link,
-            // data.category,
         );
     }
 };

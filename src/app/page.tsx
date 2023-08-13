@@ -1,4 +1,3 @@
-
 import { ExperienceCard, HeaderCard, SkillCard } from "@/components/card";
 import { NavLinkImage } from "@/components/nav";
 import { HeaderText } from "@/components/text";
@@ -87,7 +86,14 @@ export default async function AboutMe() {
             })}
           </div>
 
-
+          <div className="flex flex-col items-start gap-8">
+            <HeaderText text="Skills" />
+            <div className="flex items-start content-start gap-4 self-stretch flex-wrap">
+              {skills.length > 0 && skills.map((skill, index) => (
+                <SkillCard key={index} text={skill?.skill || ''} />
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="grid gap-4 sm:gap-8">
@@ -137,15 +143,6 @@ export default async function AboutMe() {
                 />
               )
             })}
-          </div>
-
-          <div className="flex flex-col items-start gap-8">
-            <HeaderText text="Skills" />
-            <div className="flex items-start content-start gap-4 self-stretch flex-wrap">
-              {skills.length > 0 && skills.map((skill, index) => (
-                <SkillCard key={index} text={skill?.skill || ''} />
-              ))}
-            </div>
           </div>
         </div>
       </div>
