@@ -2,7 +2,7 @@ import { ExperienceCard, HeaderCard, SkillCard } from "@/components/card";
 import { NavLinkImage } from "@/components/nav";
 import { HeaderText } from "@/components/text";
 import { db } from "@/config";
-import { getAwardList, getEducationList, getSkillList, getVolunteerList, getWorkExperienceList } from "@/service/firebase";
+import { getAwardList, getEducationList, getSkillList, getVolunteerList, getWorkExperienceList, getProfile } from "@/service/firebase";
 import { formatDate, formatExperienceDate } from "@/utils";
 import Image from "next/image";
 
@@ -12,13 +12,15 @@ export default async function AboutMe() {
     educations,
     skills,
     volunteers,
-    awards
+    awards,
+    profile,
   ] = await Promise.all([
     getWorkExperienceList(db),
     getEducationList(db),
     getSkillList(db),
     getVolunteerList(db),
-    getAwardList(db)
+    getAwardList(db),
+    getProfile(db),
   ]);
 
   return (
@@ -34,12 +36,12 @@ export default async function AboutMe() {
           </p>
 
           <p className="text-base text-white font-extralight">
-            With my roots as a full-stack developer, I&apos;ve honed my skills across mobile, web, and backend platforms. Now, as an all-rounder, I don&apos;t just develop - I design, animate, and even dive into video editing, making me a one-stop solution for holistic digital projects. Armed with hard work and grit, my commitment to constant upskilling led me to Dicoding Academy online courses and Tokopedia Academy DevCamp in 2022, and I&apos;m now immersing myself further at the Apple Developer Academy. I&apos;m actively seeking a full-time position as an iOS Developer where I can bring my diverse set of skills to the table.
+            {profile?.description}
           </p>
 
           <div className='flex flex-col md:flex-row gap-8'>
             <NavLinkImage
-              href={'https://firebasestorage.googleapis.com/v0/b/muhammad-adha-fajri-portfolio.appspot.com/o/resume%2FResume%2019-Jul-2023.pdf?alt=media&token=4cb69426-1963-4c70-a4ea-1f17e0d055a6'}
+              href={profile?.resume || ''}
               imgSrc='/icons/document-text.svg'
               label='Check Out My Resume'
               height={32}
@@ -58,8 +60,19 @@ export default async function AboutMe() {
           </div>
         </div>
 
-        <div className="order-1 sm:order-2 flex flex-col -space-y-8">
-          <Image src={"/picture.png"} alt={"Self Picture"} width={327} height={327} />
+        <div className="order-1 sm:order-2 flex flex-col -space-y-4">
+          <div className="relative w-55" style={{ paddingTop: "100%" }}>
+            <div className="absolute top-0 left-0 w-full h-full rounded-full border-8 border-white overflow-hidden">
+              <Image
+                src={profile?.picture}
+                alt="Self Picture"
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center top" // Adjusts the crop to focus more towards the top
+                className="rounded-full"
+              />
+            </div>
+          </div>
           <div className="inline-flex justify-center items-center p-4 rounded-2xl bg-white">
             <p className="text-xl sm:text-2xl text-black font-medium">
               2+ years experience

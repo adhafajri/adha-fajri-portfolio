@@ -1,5 +1,6 @@
 import { FirebaseCollection } from "@/config";
 import { skillConverter, educationConverter, workExperienceConverter, volunteerConverter, awardConverter, projectConverter, categoryConverter } from "@/model";
+import { profileConverter } from "@/model/profile";
 import { Firestore, collection, doc, getDoc, getDocs, orderBy, query, where } from "firebase/firestore";
 
 export async function getWorkExperienceList(db: Firestore) {
@@ -88,4 +89,11 @@ export async function getCategoryList(db: Firestore) {
     );
     const querySnapshot = await getDocs(categoriesQuery);
     return querySnapshot.docs.map(doc => doc.data());
+}
+
+export async function getProfile(db: Firestore) {
+    const profileQuery = query(collection(db, FirebaseCollection.profile).withConverter(profileConverter));
+
+    const querySnapshot = await getDocs(profileQuery);
+    return querySnapshot.docs.map(doc => doc.data())[0];
 }
