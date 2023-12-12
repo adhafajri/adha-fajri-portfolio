@@ -6,4 +6,5 @@ export enum FirebaseCollection {
     awards = 'awards',
     projects = 'projects',
     categories = 'categories',
+    profile = 'profile',
 };

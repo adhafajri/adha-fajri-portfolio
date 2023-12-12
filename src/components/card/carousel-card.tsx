@@ -42,12 +42,11 @@ const CarouselCard = ({ media }: { media: string[] | undefined }) => {
                         }
                     }
 
-                    const isImage = ['.jpg', '.jpeg', '.png'].some(ext => lastSegment.endsWith(ext));
-                    const isVideo = ['.mp4', '.webm'].some(ext => lastSegment.endsWith(ext));
+                    const isImage = ['.jpg', '.jpeg', '.png'].some(ext => lastSegment.toLowerCase().endsWith(ext));
+                    const isVideo = ['.mp4', '.webm'].some(ext => lastSegment.toLowerCase().endsWith(ext));
 
                     console.log('Is Image:', isImage);
                     console.log('Is Video:', isVideo);
-
 
                     return (
                         <div key={index} className={`justify-center items-center w-full sm:w-[360px] md:w-[480px] lg:w-[600px] xl:w-[720px] rounded-2xl overflow-hidden duration-700 ease-in-out ${activeIndex === index ? '' : 'hidden'} `}>
