@@ -36,7 +36,7 @@ export default async function AboutMe() {
           </p>
 
           <p className="text-base text-white font-extralight">
-            {profile?.description}
+            {profile?.description || ''}
           </p>
 
           <div className='flex flex-col md:flex-row gap-8'>
@@ -64,7 +64,7 @@ export default async function AboutMe() {
           <div className="relative w-55" style={{ paddingTop: "100%" }}>
             <div className="absolute top-0 left-0 w-full h-full rounded-full border-8 border-white overflow-hidden">
               <Image
-                src={profile?.picture}
+                src={profile?.picture || ''}
                 alt="Self Picture"
                 layout="fill"
                 objectFit="cover"
