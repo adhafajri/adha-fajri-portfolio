@@ -75,7 +75,7 @@ export default async function AboutMe() {
           </div>
           <div className="inline-flex justify-center items-center p-4 rounded-2xl bg-white">
             <p className="text-xl sm:text-2xl text-black font-medium">
-              2+ years experience
+              3+ years experience
             </p>
           </div>
         </div>
