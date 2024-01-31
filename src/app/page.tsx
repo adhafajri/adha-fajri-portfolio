@@ -32,7 +32,7 @@ export default async function AboutMe() {
           <p className="text-2xl sm:text-4xl text-white font-extralight">
             Hi, I&apos;m Muhammad Adha <span className="font-bold">Fajri</span> Jonison <span role="img" aria-label="wave" className="inline-block transform transition-transform duration-300 hover:rotate-45">👋</span>
             <br />
-            I&apos;m an aspiring <span className="font-bold">iOS Developer!</span>
+            I&apos;m a <span className="font-bold">Mobile Developer!</span>
           </p>
 
           <p className="text-base text-white font-extralight">
