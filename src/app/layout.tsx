@@ -1,6 +1,7 @@
 import NavBar from '@/components/nav/nav-bar'
 import './globals.css'
 import type { Metadata } from 'next'
+import { Analytics } from "@vercel/analytics/react"
 import { Poppins } from 'next/font/google'
 import { Footer } from '@/components/footer';
 
@@ -27,6 +28,7 @@ export default function RootLayout({
       </head>
       <body className={`${poppins.variable} font-poppins inline-flex flex-col items-start gap-8 w-full h-screen bg-black`}>
         <NavBar />
+
         {children}
 
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2979510260888726"
@@ -42,6 +44,8 @@ export default function RootLayout({
         </script>
 
         <Footer />
+
+        <Analytics />
       </body>
     </html>
   )
