@@ -27,8 +27,8 @@ export const educationConverter = {
         return {
             id: education.id,
             school: education.school,
-            position: education.degree,
-            company: education.fieldOfStudy,
+            degree: education.degree,
+            fieldOfStudy: education.fieldOfStudy,
             startDate: education.startDate,
             endDate: education.endDate,
             description: education.description
