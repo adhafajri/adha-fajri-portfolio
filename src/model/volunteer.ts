@@ -5,11 +5,11 @@ export class Volunteer {
     id: string;
     organisation: string;
     position: string;
-    description: [string];
+    description: string[];
     startDate: Timestamp;
     endDate: Timestamp;
 
-    constructor(id: string, organisation: string, position: string, startDate: Timestamp, endDate: Timestamp, description: [string]) {
+    constructor(id: string, organisation: string, position: string, startDate: Timestamp, endDate: Timestamp, description: string[]) {
         this.id = id;
         this.organisation = organisation;
         this.position = position;

@@ -5,10 +5,10 @@ export class Award {
     id: string;
     title: string;
     issuer: string;
-    description: [string];
+    description: string[];
     date: Timestamp;
 
-    constructor(id: string, title: string, issuer: string, date: Timestamp, description: [string]) {
+    constructor(id: string, title: string, issuer: string, date: Timestamp, description: string[]) {
         this.id = id;
         this.title = title;
         this.issuer = issuer;
