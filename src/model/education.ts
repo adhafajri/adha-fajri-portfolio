@@ -6,11 +6,11 @@ export class Education {
     school: string;
     degree: string;
     fieldOfStudy: string;
-    description: [string];
+    description: string[];
     startDate: Timestamp;
     endDate: Timestamp;
 
-    constructor(id: string, school: string, degree: string, fieldOfStudy: string, startDate: Timestamp, endDate: Timestamp, description: [string]) {
+    constructor(id: string, school: string, degree: string, fieldOfStudy: string, startDate: Timestamp, endDate: Timestamp, description: string[]) {
         this.id = id;
         this.school = school;
         this.degree = degree;

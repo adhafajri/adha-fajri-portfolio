@@ -6,8 +6,8 @@ export class Project {
     name: string;
     description: string;
     platform: string;
-    techStack: [string];
-    media: [string];
+    techStack: string[];
+    media: string[];
     github: string;
     link: string;
     // category: DocumentReference;
@@ -17,8 +17,8 @@ export class Project {
         name: string,
         description: string,
         platform: string,
-        techStack: [string],
-        media: [string],
+        techStack: string[],
+        media: string[],
         github: string,
         link: string,
         // category: DocumentReference
