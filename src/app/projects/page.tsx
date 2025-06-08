@@ -1,5 +1,5 @@
 import { db } from "@/config";
-import { getProjectPlatformList } from "@/service/firebase"; // Make sure to import this function
+import { getProjectPlatformList } from "@/service/firebase";
 import { Projects } from '@/components/project';
 
 export default async function Page() {
