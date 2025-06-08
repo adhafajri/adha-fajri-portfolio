@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import DropdownButton from "@/components/button/dropdown-button";
 import { ProjectCard } from "@/components/card";
 import { db } from "@/config";
-import { getProjectList, getProjectListByPlatform } from "@/service/firebase"; // Make sure to import this function
+import { getProjectList, getProjectListByPlatform } from "@/service/firebase";
 import Link from "next/link";
 import { Project } from '@/model';
 import Loading from '@/app/loading';
