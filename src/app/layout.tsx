@@ -23,21 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2979510260888726" crossOrigin="anonymous"></script>
-      </head>
       <body className={`${poppins.variable} font-poppins inline-flex flex-col items-start gap-8 w-full h-screen bg-black`}>
-
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2979510260888726"
-          crossOrigin="anonymous"></script>
-        <ins className="adsbygoogle"
-          style={{ display: 'inline-block', width: '728px', height: '90px' }}
-          data-ad-client="ca-pub-2979510260888726"
-          data-ad-slot="3659167690"></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({ });
-        </script>
-
         <NavBar />
 
         {children}
